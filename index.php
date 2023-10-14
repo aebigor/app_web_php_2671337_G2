@@ -1,5 +1,5 @@
 <?php
-    require_once "controllers/Dashboard.php";
-    $controller = new Dashboard;
-    $controller->main();
+    require_once "controllers/Roles.php";
+    $controller = new Roles;
+    $controller->createRol();
 ?>
