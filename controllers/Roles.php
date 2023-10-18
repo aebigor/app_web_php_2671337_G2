@@ -1,11 +1,14 @@
 <?php
     require_once "models/Rol.php";
-    class Roles {
-        public function __construct(){}
+    class Roles{
 
-        public function createRol() {
+        public function main(){
+            echo "Acción main() del controlador Roles";
+        }
+        // Registrar usuarios
+        public function createRol(){
             $rol = new Rol;
-            $rol->setRolCode("Hola Mundo!!!");
+            $rol->setRolCode("abc-123");
             echo $rol->getRolCode();
         }
     }
