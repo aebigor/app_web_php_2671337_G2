@@ -8,8 +8,8 @@
         // Registrar usuarios
         public function createRol(){
             $rol = new Rol;
-            $rol->setRolCode("1");
-            echo "Código Rol: " . $rol->getRolCode();
+            $rol->setRolCode("1");            
+            echo "<br>Código Rol: " . $rol->getRolCode();            
         }
     }
 ?>
