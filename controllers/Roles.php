@@ -25,7 +25,6 @@
                 echo "<br>Nombre Rol: " . $roles[$i]->getRolName();
             }
 
-
             echo "<br><br>";
             foreach ($roles as $rol) {
                 echo "<br>Código Rol: " . $rol->getRolCode();
