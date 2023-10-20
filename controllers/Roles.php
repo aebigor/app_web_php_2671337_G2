@@ -20,6 +20,13 @@
             $roles = [$rol_1, $rol_2, $rol_3, $rol_4];
             
             // Utilice una estructura de repetición para mostrar los tres objetos
+            for ($i=0; $i < 4; $i++) {
+                echo "<br>Código Rol: " . $roles[$i]->getRolCode();
+                echo "<br>Nombre Rol: " . $roles[$i]->getRolName();
+            }
+
+
+            echo "<br><br>";
             foreach ($roles as $rol) {
                 echo "<br>Código Rol: " . $rol->getRolCode();
                 echo "<br>Nombre Rol: " . $rol->getRolName();
