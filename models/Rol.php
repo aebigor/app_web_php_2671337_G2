@@ -1,7 +1,7 @@
 <?php
     class Rol{
         // ****** 1er Parte: Clase (POO) *************** //
-        // Atributos
+        // Atributos: Encapsulamiento
         private $rolCode;
         private $rolName;
         // Métodos
