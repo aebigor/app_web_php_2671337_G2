@@ -9,14 +9,21 @@
             // Objeto 1
             $rol_1 = new Rol;
             $rol_1->setRolCode("1");
-            echo "<br>Código Rol: " . $rol_1->getRolCode();
             $rol_1->setRolName("admin");            
-            echo "<br>Nombre Rol: " . $rol_1->getRolName();
             // Objeto 2 - Constructor
-
+            $rol_2 = new Rol("2", "customer");
             // Objeto 3 - Constructor
+            $rol_3 = new Rol("3", "seller");
+            // Objeto 3 - Constructor
+            $rol_4 = new Rol("4", "provider");
 
+            $roles = [$rol_1, $rol_2, $rol_3, $rol_4];
+            
             // Utilice una estructura de repetición para mostrar los tres objetos
+            foreach ($roles as $rol) {
+                echo "<br>Código Rol: " . $rol->getRolCode();
+                echo "<br>Nombre Rol: " . $rol->getRolName();
+            }
         }
     }
 ?>
