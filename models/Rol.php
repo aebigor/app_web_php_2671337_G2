@@ -2,15 +2,21 @@
     class Rol{
         // ****** 1er Parte: Clase (POO) *************** //
         // Atributos: Encapsulamiento
+        private $dbh;
         private $rolCode;
         private $rolName;
         // Métodos
         # Sobrecarga de Constructores
         public function __construct(){
-            $a = func_get_args();
-            $i = func_num_args();
-            if (method_exists($this, $f = '__construct' . $i)) {
-                call_user_func_array(array($this, $f), $a);
+            try {
+                $this->dbh = DataBase::connection();
+                $a = func_get_args();
+                $i = func_num_args();
+                if (method_exists($this, $f = '__construct' . $i)) {
+                    call_user_func_array(array($this, $f), $a);
+                }
+            } catch (Exception $e) {
+                die($e->getMessage());
             } 
         }
         public function __construct2($rolCode, $rolName){
@@ -33,10 +39,20 @@
         # rolName: get()
         public function getRolName(){
             return $this->rolName;
-        }        
+        }
         // ****** 2da Parte: Persistencia DB (CRUD) ****** //
+
+        # CU09 - Registrar Rol
         public function rolCreate(){
-            echo "Función para crear Rol";
+            try {
+                $sql = 'INSERT INTO ROLES VALUES (:rolCode,:rolName)';
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('rolCode', $this->getRolCode());
+                $stmt->bindValue('rolName', $this->getRolName());                
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
         }
     }    
 ?>
