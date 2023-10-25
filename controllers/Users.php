@@ -5,15 +5,14 @@
         # Crear Usuario
         public function createUser(){            
             $user = new User(
-                "1",                
-                "user_123",
-                "albeiro",
-                "ramos",
-                "profealbeiro2020@gmail.com",
-                sha1("12345"),
-                1,
-            );
-            print_r($user);
+                2,
+                3,
+                "marinita",
+                "garcia",
+                "marinita@garcia.com",
+                "54321",
+                1);
+            $user->userCreate();
         }
         # Listar Usuarios
         public function readUser(){}
