@@ -12,7 +12,7 @@
                 "marinita@garcia.com",
                 "54321",
                 1);
-            $user->userCreate();
+            // $user->userCreate();
         }
         # Listar Usuarios
         public function readUser(){}

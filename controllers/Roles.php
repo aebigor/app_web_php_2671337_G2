@@ -4,13 +4,20 @@
         public function main(){
             echo "Acción main() del controlador Roles";
         }
-        // Registrar usuarios
+        // Registrar Rol
         public function createRol(){
             $rol = new Rol(
                 null,
-                "seller"
+                "provider"
             );            
-            $rol->rolCreate();
+            // $rol->rolCreate();
         }
+        // Consultar roles
+        public function readRol(){
+            $roles = new Rol;
+            $roles = $roles->rolRead();
+            print_r($roles);            
+        }
+
     }
 ?>
