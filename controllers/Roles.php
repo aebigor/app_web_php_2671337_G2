@@ -8,7 +8,7 @@
         public function createRol(){
             $rol = new Rol(
                 null,
-                "seller"
+                "admin"
             );            
             // $rol->rolCreate();
         }
@@ -19,10 +19,20 @@
         }
         // Actualizar Rol
         public function updateRol(){
-            // 1ra Parte de la actualización
+            // 1ra Parte: Obtener el registro
             $rol = new Rol;
-            $rol = $rol->getRolById("1");
-            print_r($rol);
+            $rol = $rol->getRolById("1");            
+            // 2da Parte: Actualizar el registro
+            $rol_2 = new Rol(
+                3,
+                "vendedor"
+            );
+            // $rol_2->rolUpdate();
+        }
+        // Eliminar Rol
+        public function deleteRol(){
+            $rol = new Rol;
+            // $rol->rolDelete("3");
         }
 
     }

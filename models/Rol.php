@@ -88,5 +88,31 @@
                 die($e->getMessage());
             }
         }
+        # CUXX - Actualizar Rol
+        public function rolUpdate(){
+            try {                
+                $sql = 'UPDATE ROLES SET
+                            rol_code = :rolCode,
+                            rol_name = :rolName
+                        WHERE rol_code = :rolCode';
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('rolCode', $this->getRolCode());
+                $stmt->bindValue('rolName', $this->getRolName());
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
+        # CUXX - Eliminar Rol
+        public function rolDelete($rolCode){
+            try {
+                $sql = 'DELETE FROM ROLES WHERE rol_code = :rolCode';
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('rolCode', $rolCode);
+                $stmt->execute();
+            } catch (Exception $e) {
+                die($e->getMessage());
+            } 
+        }
     }    
 ?>
