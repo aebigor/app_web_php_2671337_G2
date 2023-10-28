@@ -89,6 +89,7 @@
             return $this->userStatus;
         }
         // 2da parte persitencia
+        # CUXX - Crear Usuario
         public function userCreate(){
             try {
                 $sql = 'INSERT INTO USERS VALUES (

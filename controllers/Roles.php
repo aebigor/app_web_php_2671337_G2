@@ -8,15 +8,21 @@
         public function createRol(){
             $rol = new Rol(
                 null,
-                "provider"
+                "seller"
             );            
             // $rol->rolCreate();
         }
         // Consultar roles
         public function readRol(){
             $roles = new Rol;
-            $roles = $roles->rolRead();
-            print_r($roles);            
+            $roles = $roles->rolRead();            
+        }
+        // Actualizar Rol
+        public function updateRol(){
+            // 1ra Parte de la actualización
+            $rol = new Rol;
+            $rol = $rol->getRolById("1");
+            print_r($rol);
         }
 
     }

@@ -71,5 +71,22 @@
                 die($e->getMessage());
             }
         }
+        # CUXX - Obtener el Rol por Id
+        public function getRolById($rolCode){
+            try {
+                $sql = "SELECT * FROM ROLES WHERE rol_code=:rolCode";
+                $stmt = $this->dbh->prepare($sql);
+                $stmt->bindValue('rolCode', $rolCode);
+                $stmt->execute();                
+                $rolDb = $stmt->fetch();                
+                $rol = new Rol(
+                    $rolDb['rol_code'],
+                    $rolDb['rol_name']
+                );                
+                return $rol;
+            } catch (Exception $e) {
+                die($e->getMessage());
+            }
+        }
     }    
 ?>
