@@ -8,8 +8,9 @@
         public function createRol(){
             $rol = new Rol(
                 null,
-                "admin"
-            );            
+                "pepinito"
+            );
+            print_r($rol)            ;
             // $rol->rolCreate();
         }
         // Consultar roles

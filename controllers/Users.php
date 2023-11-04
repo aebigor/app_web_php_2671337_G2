@@ -5,12 +5,12 @@
         # Crear Usuario
         public function createUser(){            
             $user = new User(
+                1,
                 2,
-                3,
-                "marinita",
-                "garcia",
-                "marinita@garcia.com",
-                "54321",
+                "albeiro",
+                "ramos",
+                "profealbeiro2020",
+                "12345",
                 1);
             // $user->userCreate();
         }

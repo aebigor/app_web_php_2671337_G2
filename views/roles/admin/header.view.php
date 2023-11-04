@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -21,18 +22,19 @@
 	<link rel="stylesheet" href="assets/dashboard/css/sweetalert2.min.css">
 
 	<!-- Sweet Alert V8.13.0 JS file-->
-	<script src="assets/dashboard/js/sweetalert2.min.js" ></script>
+	<script src="assets/dashboard/js/sweetalert2.min.js"></script>
 
 	<!-- jQuery Custom Content Scroller V3.1.5 -->
 	<link rel="stylesheet" href="assets/dashboard/css/jquery.mCustomScrollbar.css">
-	
+
 	<!-- General Styles -->
 	<link rel="stylesheet" href="assets/dashboard/css/style.css">
 
 
 </head>
+
 <body>
-	
+
 	<!-- Main container -->
 	<main class="full-box main-container">
 		<!-- Nav lateral -->
@@ -54,49 +56,13 @@
 						</li>
 
 						<li>
-							<a href="#" class="nav-btn-submenu"><i class="fas fa-users fa-fw"></i> &nbsp; Clientes <i class="fas fa-chevron-down"></i></a>
+							<a href="#" class="nav-btn-submenu"><i class="fas  fas fa-users fa-fw"></i> &nbsp; Roles <i class="fas fa-chevron-down"></i></a>
 							<ul>
 								<li>
-									<a href="client-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar Cliente</a>
+									<a href="?c=Roles&a=createRol"><i class="fas fa-plus fa-fw"></i> &nbsp; Nuevo Rol</a>
 								</li>
 								<li>
-									<a href="client-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de clientes</a>
-								</li>
-								<li>
-									<a href="client-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar cliente</a>
-								</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="#" class="nav-btn-submenu"><i class="fas fa-pallet fa-fw"></i> &nbsp; Items <i class="fas fa-chevron-down"></i></a>
-							<ul>
-								<li>
-									<a href="item-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Agregar item</a>
-								</li>
-								<li>
-									<a href="item-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de items</a>
-								</li>
-								<li>
-									<a href="item-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; Buscar item</a>
-								</li>
-							</ul>
-						</li>
-
-						<li>
-							<a href="#" class="nav-btn-submenu"><i class="fas fa-file-invoice-dollar fa-fw"></i> &nbsp; Préstamos <i class="fas fa-chevron-down"></i></a>
-							<ul>
-								<li>
-									<a href="reservation-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; Nuevo préstamo</a>
-								</li>
-								<li>
-									<a href="reservation-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de préstamos</a>
-								</li>
-								<li>
-									<a href="reservation-search.html"><i class="fas fa-search-dollar fa-fw"></i> &nbsp; Buscar préstamos</a>
-								</li>
-								<li>
-									<a href="reservation-pending.html"><i class="fas fa-hand-holding-usd fa-fw"></i> &nbsp; Préstamos pendientes</a>
+									<a href="user-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Roles</a>
 								</li>
 							</ul>
 						</li>
@@ -115,11 +81,31 @@
 								</li>
 							</ul>
 						</li>
-
-						<li>
-							<a href="company.html"><i class="fas fa-store-alt fa-fw"></i> &nbsp; Empresa</a>
-						</li>
 					</ul>
 				</nav>
 			</div>
 		</section>
+
+		<!-- Page content -->
+		<section class="full-box page-content">
+			<nav class="full-box navbar-info">
+				<a href="#" class="float-left show-nav-lateral">
+					<i class="fas fa-exchange-alt"></i>
+				</a>
+				<a href="user-update.html">
+					<i class="fas fa-user-cog"></i>
+				</a>
+				<a href="#" class="btn-exit-system">
+					<i class="fas fa-power-off"></i>
+				</a>
+			</nav>
+
+			<!-- Page header -->
+			<div class="full-box page-header">
+				<h3 class="text-left">
+					<i class="fab fa-dashcube fa-fw"></i> &nbsp; DASHBOARD
+				</h3>
+				<p class="text-justify">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit nostrum rerum animi natus beatae ex. Culpa blanditiis tempore amet alias placeat, obcaecati quaerat ullam, sunt est, odio aut veniam ratione.
+				</p>
+			</div>
