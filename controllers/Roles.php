@@ -6,12 +6,19 @@
         }
         // Registrar Rol
         public function createRol(){
-            $rol = new Rol(
-                null,
-                "pepinito"
-            );
-            print_r($rol)            ;
-            // $rol->rolCreate();
+            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+                require_once "views/roles/admin/header.view.php";
+                require_once "views/modules/mod01_users/rol_create.view.php";
+                require_once "views/roles/admin/footer.view.php";
+            }
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $rol = new Rol(
+                    null,
+                    $_POST['rolName']
+                );                
+                $rol->rolCreate();
+                header("Location:?c=Dashboard");
+            }
         }
         // Consultar roles
         public function readRol(){
