@@ -17,13 +17,16 @@
                     $_POST['rolName']
                 );                
                 $rol->rolCreate();
-                header("Location:?c=Dashboard");
+                header("Location:?c=Roles&a=readRol");
             }
         }
         // Consultar roles
         public function readRol(){
             $roles = new Rol;
-            $roles = $roles->rolRead();            
+            $roles = $roles->rolRead();
+            require_once "views/roles/admin/header.view.php";
+            require_once "views/modules/mod01_users/rol_read.view.php";
+            require_once "views/roles/admin/footer.view.php";            
         }
         // Actualizar Rol
         public function updateRol(){

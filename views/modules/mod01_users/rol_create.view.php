@@ -2,13 +2,13 @@
 			<div class="container-fluid">
 				<ul class="full-box list-unstyled page-nav-tabs">
 					<li>
-						<a class="active" href="user-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; NUEVO USUARIO</a>
+						<a class="active" href="user-new.html"><i class="fas fa-plus fa-fw"></i> &nbsp; NUEVO ROL</a>
 					</li>
 					<li>
-						<a href="user-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE USUARIOS</a>
+						<a href="user-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; LISTA DE ROLES</a>
 					</li>
 					<li>
-						<a href="user-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR USUARIO</a>
+						<a href="user-search.html"><i class="fas fa-search fa-fw"></i> &nbsp; BUSCAR ROL</a>
 					</li>
 				</ul>	
 			</div>

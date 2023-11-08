@@ -62,7 +62,7 @@
 									<a href="?c=Roles&a=createRol"><i class="fas fa-plus fa-fw"></i> &nbsp; Nuevo Rol</a>
 								</li>
 								<li>
-									<a href="user-list.html"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Roles</a>
+									<a href="?c=Roles&a=readRol"><i class="fas fa-clipboard-list fa-fw"></i> &nbsp; Lista de Roles</a>
 								</li>
 							</ul>
 						</li>
