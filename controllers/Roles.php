@@ -34,18 +34,20 @@
                 // 1ra Parte: Obtener el registro
                 $rol = new Rol;
                 $rol = $rol->getRolById($_GET['idRol']);
-                print_r($rol); 
+                require_once "views/roles/admin/header.view.php";
+                require_once "views/modules/mod01_users/rol_update.view.php";                
+                require_once "views/roles/admin/footer.view.php";
             }
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // 2da Parte: Actualizar el registro
-                $rol_2 = new Rol(
-                    3,
-                    "vendedor"
+                $rol = new Rol(
+                    $_POST['rolCode'],
+                    $_POST['rolName']
                 );
+                print_r($rol);
+                $rol->rolUpdate();
+                header("Location:?c=Roles&a=readRol");
             }
-                       
-            
-            // $rol_2->rolUpdate();
         }
         // Eliminar Rol
         public function deleteRol(){
