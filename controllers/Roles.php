@@ -2,7 +2,7 @@
     require_once "models/Rol.php";
     class Roles{
         public function main(){
-            echo "Acción main() del controlador Roles";
+            header("Location:?c=Dashboard");
         }
         // Registrar Rol
         public function createRol(){
@@ -30,14 +30,21 @@
         }
         // Actualizar Rol
         public function updateRol(){
-            // 1ra Parte: Obtener el registro
-            $rol = new Rol;
-            $rol = $rol->getRolById("1");            
-            // 2da Parte: Actualizar el registro
-            $rol_2 = new Rol(
-                3,
-                "vendedor"
-            );
+            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+                // 1ra Parte: Obtener el registro
+                $rol = new Rol;
+                $rol = $rol->getRolById($_GET['idRol']);
+                print_r($rol); 
+            }
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                // 2da Parte: Actualizar el registro
+                $rol_2 = new Rol(
+                    3,
+                    "vendedor"
+                );
+            }
+                       
+            
             // $rol_2->rolUpdate();
         }
         // Eliminar Rol
