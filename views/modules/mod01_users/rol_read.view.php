@@ -31,17 +31,19 @@
 								<td><?php echo $rol->getRolCode(); ?></td>
 								<th><?php echo $rol->getRolName(); ?></th>								
 								<td>
-									<a href="?c=Roles&a=updateRol&idRol=<?php echo $rol->getRolCode();?>" class="btn btn-success">
+									<a href="?c=Roles&a=updateRol&idRol=<?php echo $rol->getRolCode();?>" class="btn btn-sucese">
 	  									<i class="fas fa-sync-alt"></i>	
 									</a>
 								</td>
 								<td>
-									<form action="">
-										<button type="button" class="btn btn-warning">
-		  									<i class="far fa-trash-alt"></i>
-										</button>
-									</form>
+									<a href="?c=Roles&a=deleteRol&idRol=<?php echo $rol->getRolCode(); ?>" name="idRol">
+									<button type="submit" class="btn btn-warning">
+        							<i class="far fa-trash-alt"></i>
+    							</button>
+									</a>
 								</td>
+								
+							
 							</tr>
 						<?php endforeach; ?>							
 						</tbody>

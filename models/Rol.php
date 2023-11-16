@@ -74,20 +74,28 @@
         # CUXX - Obtener el Rol por Id
         public function getRolById($rolCode){
             try {
-                $sql = "SELECT * FROM ROLES WHERE rol_code=:rolCode";
+                $sql = "SELECT * FROM ROLES WHERE rol_code= :rolCode";
                 $stmt = $this->dbh->prepare($sql);
-                $stmt->bindValue('rolCode', $rolCode);
+                $stmt->bindValue(':rolCode', $rolCode);
                 $stmt->execute();                
                 $rolDb = $stmt->fetch();                
-                $rol = new Rol(
-                    $rolDb['rol_code'],
-                    $rolDb['rol_name']
-                );                
-                return $rol;
+                
+                if ($rolDb) {
+                    // Verifica que se haya encontrado un rol en la base de datos
+                    $rol = new Rol(
+                        $rolDb['rol_code'],
+                        $rolDb['rol_name']
+                    );                
+                    return $rol;
+                } else {
+                    // En caso de que no se encuentre el rol, puedes devolver null o manejarlo según tus necesidades
+                    return null;
+                }
             } catch (Exception $e) {
                 die($e->getMessage());
             }
         }
+        
         # CUXX - Actualizar Rol
         public function rolUpdate(){
             try {                
@@ -104,15 +112,17 @@
             }
         }
         # CUXX - Eliminar Rol
-        public function rolDelete($rolCode){
-            try {
-                $sql = 'DELETE FROM ROLES WHERE rol_code = :rolCode';
-                $stmt = $this->dbh->prepare($sql);
-                $stmt->bindValue('rolCode', $rolCode);
-                $stmt->execute();
-            } catch (Exception $e) {
-                die($e->getMessage());
-            } 
-        }
-    }    
+ # CUXX - Eliminar Rol
+public function rolDelete($rolCode){
+    try {
+        $sql = 'DELETE FROM ROLES WHERE rol_code = :rolCode';
+        $stmt = $this->dbh->prepare($sql);
+        $stmt->bindValue(':rolCode', $rolCode);  // Asegúrate de pasar el código del rol, no el objeto Rol
+        $stmt->execute();
+    } catch (Exception $e) {
+        die($e->getMessage());
+    } 
+}
+}
+  
 ?>

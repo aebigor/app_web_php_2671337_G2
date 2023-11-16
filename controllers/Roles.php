@@ -51,9 +51,33 @@
         }
         // Eliminar Rol
         public function deleteRol(){
-            $rol = new Rol;
-            // $rol->rolDelete("3");
+            if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+                $rol = isset($_GET['idRol']) ? $_GET['idRol'] : null;
+               
+        
+                if ($rol) {
+                    $rol = new Rol();
+                    $rol = $rol->rolDelete($_GET['idRol']);
+                    header("Location:?c=Roles&a=readRol");
+        
+                    if ($rol) { 
+                        $rol->rolDelete($_GET['idRol']);
+                        header("Location:?c=Roles&a=readRol");
+                    } else {
+                        // Manejar el caso en que no se encuentra el rol
+                        echo "El rol no se encontró";
+                    }
+                } else {
+                    // Manejar el caso en que no se proporciona un código de rol
+                    echo "Código de rol no proporcionado";
+                }
+            }
         }
-
     }
+        
+        
+        
+     // $rol->rolDelete("3");
+     
+
 ?>
